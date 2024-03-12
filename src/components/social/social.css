@@ -1,0 +1,23 @@
+.socialMain {
+    color: white;
+    background-color: #199de4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1vh;
+    padding: 1rem 3rem;
+}
+
+.social-icons ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.social-icons ul li {
+    cursor: pointer;
+}

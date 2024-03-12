@@ -1,0 +1,50 @@
+.navbarMain {
+    padding: 1.5rem 3rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    font-weight: bold;
+}
+
+.navbarMain .imageLogo {
+    width: 100px;
+}
+
+.navbarMain .imageLogo img {
+    width: 100%;
+}
+
+.navbarMain ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbarMain ul li {
+    cursor: pointer;
+}
+
+.navbarMain ul li:hover {
+    color: #106e9f;
+    font-weight: bold;
+}
+
+.navbarMain ul li:last-child {
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    color: #fff;
+    padding: .5rem 2.5rem;
+}
+
+.navbarMain .profile-langue{
+    display: flex;
+    align-items: center;
+    gap: 2rem   ;
+}
