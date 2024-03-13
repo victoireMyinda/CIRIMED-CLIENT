@@ -1,0 +1,23 @@
+.equipeMain {
+    display: grid;
+    padding: 2rem 5rem ;
+    gap: 1rem;
+}
+
+.equipeSecondText {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.equipePhoto {
+    display: flex;
+    gap: 2rem;   
+}
+
+.equipePhoto div {
+    height: 500px;
+    width: 40%;
+    background-color: lightblue;
+    border-radius: 10px;
+    object-fit: cover;
+}

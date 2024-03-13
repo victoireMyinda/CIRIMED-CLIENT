@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import "./header.css";
-import "./header.css";
 import { FiChevronDown } from "react-icons/fi";
 import { FaRegUser } from "react-icons/fa";
 import Popup from "reactjs-popup";
@@ -26,7 +25,11 @@ const Navbar = ({ other }) => {
     }
 
     if (windowSize > 40) {
-      nav.classList.add("sticky");
+      if (!other) {
+        nav.classList.add("sticky");
+      } else {
+        nav.classList.add("stickyActive");
+      }
     } else {
       nav.classList.remove("sticky");
     }
@@ -34,7 +37,7 @@ const Navbar = ({ other }) => {
     window.addEventListener("scroll", handleRezise);
 
     return () => window.removeEventListener("scroll", handleRezise);
-  }, [windowSize]);
+  }, [windowSize, other]);
 
   const { userConnected, setUserConnected } = useContext(ContextApp);
 
@@ -42,8 +45,6 @@ const Navbar = ({ other }) => {
     setUserConnected(null);
     localStorage.removeItem("tokenUser");
   }
-
-  console.log(userConnected);
 
   return (
     <div className={other ? "navbarMain active" : "navbarMain"}>
@@ -114,7 +115,7 @@ const Navbar = ({ other }) => {
             onClick={() => handleClick("Devenir membre")}
             style={activeItem === "Devenir membre" ? activeStyle : {}}
           >
-            <Link to="/signup" style={{ textDecoration: "none" }}>
+            <Link to="/sign-up" style={{ textDecoration: "none" }}>
               Devenir membre
             </Link>
           </li>
@@ -150,12 +151,15 @@ const Navbar = ({ other }) => {
                 )}
               </button>
             }
-            position={["bottom center", "bottom right", "bottom left"]}
+            position={["bottom right", "bottom right", "bottom right"]}
             closeOnDocumentClick
           >
             <div className="btnsLinks">
               {!userConnected ? (
-                <Link to="/sign-in" style={{ padding: "1rem", textAlign: "center" }}>
+                <Link
+                  to="/sign-in"
+                  style={{ padding: "1rem", textAlign: "center" }}
+                >
                   Connexion
                 </Link>
               ) : (

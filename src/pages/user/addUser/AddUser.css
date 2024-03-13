@@ -1,0 +1,27 @@
+.addUser .headAdd {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.addUser.modal .modal-dialog {
+  width: 60% !important;
+  max-width: 100% !important;
+  margin-top: 6rem;
+}
+
+.addUser.modal .modal-dialog input {
+  box-shadow: none;
+  border-radius: 3px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.addUser.modal .modal-dialog button {
+  background-color: #199de4;
+  border: 0;
+  padding: 0.4rem 1rem;
+  float: right;
+  color: #fff;
+  margin-top: 1rem;
+}

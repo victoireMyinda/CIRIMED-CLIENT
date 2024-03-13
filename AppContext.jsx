@@ -9,6 +9,7 @@ export const ContextApp = createContext();
 const AppContext = () => {
   const [userConnected, setUserConnected] = useState(null);
   const [isCoonnected, setIsConnected] = useState(false);
+  const [posts, setPosts] = useState(null);
 
   const value = localStorage.getItem("tokenUser");
   const jwt =
@@ -25,6 +26,19 @@ const AppContext = () => {
     }
   };
 
+  const getAllPosts = async () => {
+    try {
+      const { data } = await axios.get(`${baseUrl}/posts`);
+      setPosts(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getAllPosts();
+  }, []);
+
   useEffect(() => {
     if (isCoonnected === true) {
       getUserById(userID);
@@ -39,6 +53,8 @@ const AppContext = () => {
         userConnected,
         setUserConnected,
         setIsConnected,
+        setPosts,
+        posts,
       }}
     >
       <App />
