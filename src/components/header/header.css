@@ -33,7 +33,7 @@
 
 .navbarMain ul li:hover {
     color: #106e9f;
-    font-weight: bold;
+    
 }
 
 .navbarMain ul li:last-child {
@@ -47,4 +47,14 @@
     display: flex;
     align-items: center;
     gap: 2rem   ;
+}
+
+.profile-langue .select-langue select{
+   
+    border-radius: 10px;
+    padding: 7px;
+    border: 1px solid lightgray;
+    color: #106e9f;
+    outline: none;
+    width: 100px;
 }

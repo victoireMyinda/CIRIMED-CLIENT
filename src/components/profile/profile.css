@@ -1,0 +1,151 @@
+.navbarService {
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+
+.navbarService .col1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.navbarService .MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeSmall:hover {
+    box-shadow: none ;
+    background-color: #fff !important;
+    border-radius: 0;
+}
+
+.navbarService .col1 a {
+    color: #333;
+    padding: .4rem .7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: .6rem;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.navbarService button {
+    padding: .4rem .7rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    background-color: #fff;
+    border: 0;
+}
+
+.navbarService .btnFavorisAndTousLesProduits {
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid silver;
+    padding: .6rem 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.toggle {
+    display: none;
+}
+
+.dataService {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+}
+
+.navbarService .btnGetStarted button svg {
+    color: #333;
+}
+
+.navbarServiceFormatPhone {
+    display: none;
+}
+
+.navbarServiceFormatPhone .col1 {
+    display: none;
+}
+.btnFavoris{
+    background-color: transparent;
+    color: #333;
+    width: 100px !important;
+}
+
+@media screen and (max-width:1015px) {
+    .navbarService {
+        display: none !important;
+    }
+
+    .toggle {
+        background-color: #0b6cc7d0;
+        padding: 1rem;
+        display: block;
+    }
+
+    .toggle svg {
+        font-size: 2rem;
+        color: #fff;
+    }
+
+    .navbarServiceFormatPhone {
+        display: block;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(-100%);
+        height: 0;
+    }
+
+    .navbarServiceFormatPhone.open {
+        transform: translateX(0);
+        color: #fff;
+        width: 100%;
+        height: auto;
+        background-color: #0b6cc7d0 !important;
+        justify-content: space-around;
+        align-items: start;
+        padding-bottom: 1rem;
+    }
+
+    .navbarServiceFormatPhone.open a,
+    .navbarServiceFormatPhone button {
+        color: #fff;
+        width: 100% !important;
+        text-align: center;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        border-radius: 0;
+        padding: 1rem;
+    }
+
+    .navbarServiceFormatPhone button svg,
+    .navbarServiceFormatPhone button span {
+        color: #fff !important;
+    }
+}
+
+
+@media screen and (max-width:600px) {
+
+    .navbarServiceFormatPhone a {
+        width: 100%;
+        text-align: center;
+        border: 2px solid #fff;
+        padding: .5rem 1rem;
+        border-radius: 30px;
+    }
+}

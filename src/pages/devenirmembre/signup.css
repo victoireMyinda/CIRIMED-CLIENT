@@ -1,0 +1,12 @@
+.formMain{
+    background-color: #ddd;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    height: max-content;
+    padding: 2rem 3rem;
+}
+
+
+input{
+    background-color: red;
+}

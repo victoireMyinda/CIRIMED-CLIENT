@@ -1,0 +1,132 @@
+.compteAndSecurity {
+    width: 45%;
+    margin: .4rem auto;
+    background-color: #fff;
+    padding: 2rem;
+}
+
+.compteAndSecurity .toolBar {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    gap: 15px;
+    margin-bottom: 1rem;
+}
+
+.compteAndSecurity .toolBar svg {
+    color: #333;
+}
+
+.compteAndSecurity .toolBar a {
+    text-decoration: none;
+}
+
+.compteAndSecurity .contentMain {
+    margin-top: 2rem;
+}
+
+.compteAndSecurity .contentMain .card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.compteAndSecurity .title {
+    font-size: 1.3rem;
+}
+
+.compteAndSecurity .contentMain .content {
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 3rem;
+}
+
+.compteAndSecurity .contentMain .content:last-child {
+    border-bottom: 0;
+}
+
+.compteAndSecurity .contentMain .content .desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.compteAndSecurity .contentMain .content .desc span {
+    font-size: 13px;
+}
+
+.compteAndSecurity .contentMain .content .desc span:first-child {
+    font-weight: bold;
+}
+
+.compteAndSecurity .contentMain .content button {
+    border: 1px solid #ddd;
+    font-size: 13px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    border-radius: 4px;
+    outline: none;
+    padding: .5rem 1rem !important;
+}
+
+.compteAndSecurity .termine {
+    border: 1px solid #ddd;
+    font-size: 13px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    border-radius: 4px;
+    padding: .5rem 1rem !important;
+    margin-top: .5rem;
+}
+
+@media screen and (max-width:1300px) {
+    .compteAndSecurity {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .compteAndSecurity {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .compteAndSecurity {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .compteAndSecurity {
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+}
+
+@media screen and (max-width:316px) {
+    .compteAndSecurity {
+        width: 100%;
+        padding: 2rem .5rem;
+    }
+}
+
+@media screen and (max-width:302px) {
+    .compteAndSecurity .contentMain .content {
+        gap: 1rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+    }
+
+    .compteAndSecurity .toolBar {
+        gap: 8px;
+    }
+
+    .compteAndSecurity .toolBar a,
+    .compteAndSecurity .toolBar span {
+        font-size: 12px;
+    }
+}

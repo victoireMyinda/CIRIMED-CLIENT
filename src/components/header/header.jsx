@@ -2,20 +2,21 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../assets/images/logo.png";
 import "./header.css";
+import "./header.css";
+import { FiUser } from 'react-icons/fi';
 
 const Navbar = () => {
-  // État local pour suivre l'élément actif
+
   const [activeItem, setActiveItem] = useState("Accueil");
 
-  // Style de l'élément actif
   const activeStyle = {
-    color: "blue",
+    color: "#106e9f",
     padding: "5px",
     borderRadius: "5px",
     background: "lightgray",
   };
 
-  // Fonction pour gérer le clic sur un élément
+
   const handleClick = (item) => {
     setActiveItem(item);
   };
@@ -29,21 +30,21 @@ const Navbar = () => {
       </div>
 
       <ul>
-        {/* Accueil */}
+
         <li className={activeItem === "Accueil" ? "active" : ""} onClick={() => handleClick("Accueil")} style={activeItem === "Accueil" ? activeStyle : {}}>
           <Link to="/" style={{ textDecoration: "none" }}>
             Accueil
           </Link>
         </li>
 
-        {/* Posts */}
+
         <li className={activeItem === "Posts" ? "active" : ""} onClick={() => handleClick("Posts")} style={activeItem === "Posts" ? activeStyle : {}}>
           <Link to="/posts" style={{ textDecoration: "none" }}>
             Posts
           </Link>
         </li>
 
-        {/* Formations et Atelier */}
+
         <li className={activeItem === "Formations et Atelier" ? "active" : ""} onClick={() => handleClick("Formations et Atelier")} style={activeItem === "Formations et Atelier" ? activeStyle : {}}>
           <Link to="/formations" style={{ textDecoration: "none" }}>
             Formations et Atelier
@@ -69,7 +70,7 @@ const Navbar = () => {
         </li>
 
         <li className={activeItem === "Devenir membre" ? "active" : ""} onClick={() => handleClick("Devenir membre")} style={activeItem === "Devenir membre" ? activeStyle : {}}>
-          <Link to="/formations" style={{ textDecoration: "none" }}>
+          <Link to="/signup" style={{ textDecoration: "none" }}>
             Devenir membre
           </Link>
         </li>
@@ -77,7 +78,7 @@ const Navbar = () => {
       </ul>
 
       <div className="profile-langue">
-        <div>
+        <div className='select-langue'>
           <select>
             <option value="" key="">Anglais</option>
             <option value="" key="">Français</option>
@@ -85,8 +86,8 @@ const Navbar = () => {
         </div>
 
         <div>
-          <p>Profile</p>
-        </div>
+          <FiUser size={20} style={{ cursor: "pointer" }} />
+        </div>²
       </div>
     </div>
   )
