@@ -1,0 +1,33 @@
+.serviceMain {
+    display: grid;
+    gap: 1rem;
+    padding: 4rem 14rem;
+}
+
+.serviceMain .serviceDesc2{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.serviceMain .serviceDesc3{
+display: grid;
+grid-template-columns: repeat(3, 33%);
+gap: 2rem;
+
+
+}
+
+.serviceMain .serviceDesc3 .cardService{
+    font-size: 1rem;
+    display: grid;
+    padding: 2rem;
+    height: 220px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+   
+}
+
+.serviceMain .serviceDesc3 .cardService .cardFirstTitle{
+    font-weight: 500;
+    font-size: 1.3rem;
+}

@@ -87,7 +87,7 @@ const Navbar = () => {
 
         <div>
           <FiUser size={20} style={{ cursor: "pointer" }} />
-        </div>²
+        </div>
       </div>
     </div>
   )
