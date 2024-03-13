@@ -1,0 +1,33 @@
+.Services {
+  width: 70%;
+  margin: auto;
+  border-bottom: 5px solid #0b6cc7d0;
+}
+
+.Services .servicesContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.Services .servicesContent .content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.Services .servicesContent .content svg {
+  color: #0b6cc7d0;
+  font-size: 2.3rem;
+}
+
+.Services .servicesContent .content .desc {
+  text-align: center;
+  font-family: "Alegreya";
+}

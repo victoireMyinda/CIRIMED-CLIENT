@@ -1,23 +1,46 @@
 .socialMain {
-    color: white;
-    background-color: #199de4;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 1vh;
-    padding: 1rem 3rem;
+  background-color: transparent;
+  padding: 0.5rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
 }
 
-.social-icons ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-
+.socialMain.active {
+  background-color: #222;
 }
 
-.social-icons ul li {
-    cursor: pointer;
+.socialMain .streetAdress {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socialMain .streetAdress span {
+  color: #fff;
+  z-index: 1;
+}
+
+.socialMain .rxSocial {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socialMain .rxSocial .iconsRx {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+}
+.socialMain .rxSocial .iconsRx svg {
+  color: #fff;
+}
+
+.socialMain .rxSocial span,
+.socialMain .rxSocial .searchIcon {
+  height: 100%;
+  color: #fff;
+  z-index: 1;
 }

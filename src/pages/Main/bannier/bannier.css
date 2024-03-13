@@ -1,41 +1,52 @@
 .acceuil {
-   
-    display: flex;
-    align-items: center;
-    width: 100%;
-    gap: 1rem;
-    background-color: #ddd;
+  padding: 2rem 5rem;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.acceuil .col1 {
-    width: 45%;
-    height: 500px;
+.acceuil h2 {
+  font-size: 4rem;
+  font-weight: 600;
+  color: #fff;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  line-height: 3.5rem;
 }
 
-.acceuil .col1 img {
-    width: 100%;
-    height: 100%;
-    object-fit: scale-down;
+.acceuil .description {
+  color: #fff;
+  font-family: "Alegreya";
+  width: 50%;
+  z-index: 1;
+  font-size: 1.4rem
 }
 
-.acceuil .col2 {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    width: 64%;
+.acceuil .btns {
+  display: flex;
+  gap: 1rem;
 }
 
-.acceuil .col2 .title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #106e9f;
+.acceuil .btns button:first-child {
+  border: 1px solid #f3f5f8;
+  background-color: #f3f5f8;
+  color: #0b6cc7d0;
+  font-weight: 600;
+  z-index: 1;
+  border-radius: 5px;
+  padding: .5rem 1rem;
 }
 
-.acceuil .col2 .button {
-    width: 30%;
-    border: 1px solid #ee4540;
-    background-color: #ee4540;
+.acceuil .btns button:last-child {
+    border: 1px solid #fff;
+    background-color: transparent;
     color: #fff;
-    border-radius: 25px;
-    padding: 1rem !important;
-}
+    z-index: 1;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+  }
+  
