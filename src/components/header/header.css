@@ -1,17 +1,25 @@
 .navbarMain {
-  padding: 1.5rem 5rem;
+  padding: 1rem 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  position: fixed;
+  width: 100%;
+  z-index: 100000;
 }
 
 .navbarMain.sticky {
   background-color: #222;
   z-index: 100;
+  top: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.navbarMain.activeOther ul li a,
+.navbarMain.activeOther .select-langue select,
+.navbarMain.active .nomUserProfile {
+  color: #fff !important;
 }
 
 .navbarMain .imageLogo {
@@ -43,6 +51,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none;
 }
 
 .navbarMain.active ul li a {
@@ -50,18 +59,11 @@
 }
 
 .navbarMain ul li a svg {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
 }
 
 .navbarMain ul li:hover {
   color: #106e9f;
-}
-
-.navbarMain ul li:last-child {
-  border: 2px solid lightgray;
-  border-radius: 5px;
-  color: #fff;
-  padding: 0.5rem 1rem;
 }
 
 .navbarMain.active ul li:last-child {
@@ -77,7 +79,7 @@
 .profile-langue .select-langue select {
   border-radius: 3px;
   padding: 7px;
-  border: 1px solid lightgray;
+  border: 0;
   color: #fff;
   outline: none;
   width: 100px;

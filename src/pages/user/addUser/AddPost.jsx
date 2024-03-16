@@ -9,7 +9,6 @@ import "./AddUser.css";
 
 const AddUser = ({ setShow, show, post, setPost, index }) => {
   const { userConnected, setPosts, posts } = useContext(ContextApp);
-  const postsUser = posts && posts.data;
 
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -21,11 +20,9 @@ const AddUser = ({ setShow, show, post, setPost, index }) => {
       setDesc(post && post.desc);
       setFile(post && post.url);
     }
-  }, [post]);
+  }, [post, posts, index]);
 
   const [clic, setClic] = useState(false);
-
-  console.log(posts);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,18 +36,28 @@ const AddUser = ({ setShow, show, post, setPost, index }) => {
       formData.append("userId", userConnected && userConnected.id);
 
       if (post) {
-        const arr = [...postsUser];
         let { data } = await axios.put(
           `${baseUrl}/posts/${post && post.id}`,
           formData
         );
-        arr[index] = data;
+        const arr = [...posts];
+        arr[index + 1] = data;
         setPosts([...arr]);
         setClic(false);
+        setShow(false);
+        setTitle("");
+        setDesc("");
+        setFile("");
+        setPost(null)
         toast.success("Post modifié");
       } else {
         let { data } = await axios.post(`${baseUrl}/posts`, formData);
-        setPosts(data);
+        if (posts && posts.length > 0) {
+          setPosts([...posts, data]);
+        } else {
+          setPosts([data]);
+        }
+
         setClic(false);
         toast.success("Post ajouté avec succès");
       }
@@ -79,7 +86,7 @@ const AddUser = ({ setShow, show, post, setPost, index }) => {
           >
             <span>
               {post
-                ? `Modification de ${post && post.nom}`
+                ? `Modification de ${post && post.title}`
                 : "Ajout d'un nouveau post"}
             </span>
             {post && (

@@ -6,6 +6,7 @@ import { FiChevronDown } from "react-icons/fi";
 import { FaRegUser } from "react-icons/fa";
 import Popup from "reactjs-popup";
 import { ContextApp } from "../../../AppContext";
+import { FcGlobe } from "react-icons/fc";
 
 const Navbar = ({ other }) => {
   const [activeItem, setActiveItem] = useState("Accueil");
@@ -25,13 +26,14 @@ const Navbar = ({ other }) => {
     }
 
     if (windowSize > 40) {
-      if (!other) {
-        nav.classList.add("sticky");
-      } else {
-        nav.classList.add("stickyActive");
+      nav.classList.add("sticky");
+
+      if (other) {
+        nav.classList.add("activeOther");
       }
     } else {
       nav.classList.remove("sticky");
+      nav.classList.remove("activeOther");
     }
 
     window.addEventListener("scroll", handleRezise);
@@ -56,17 +58,6 @@ const Navbar = ({ other }) => {
 
       <ul>
         <li
-          className={activeItem === "Accueil" ? "active" : ""}
-          onClick={() => handleClick("Accueil")}
-          style={activeItem === "Accueil" ? activeStyle : {}}
-        >
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <span>Accueil</span>
-            <FiChevronDown />
-          </Link>
-        </li>
-
-        <li
           className={activeItem === "Posts" ? "active" : ""}
           onClick={() => handleClick("Posts")}
           style={activeItem === "Posts" ? activeStyle : {}}
@@ -89,41 +80,48 @@ const Navbar = ({ other }) => {
         </li>
 
         <li
-          className={activeItem === "Images" ? "active" : ""}
-          onClick={() => handleClick("Images")}
-          style={activeItem === "Images" ? activeStyle : {}}
-        >
-          <Link to="/formations" style={{ textDecoration: "none" }}>
-            <span>Images</span>
-            <FiChevronDown />
-          </Link>
-        </li>
-
-        <li
           className={activeItem === "Nos videos" ? "active" : ""}
           onClick={() => handleClick("Nos videos")}
           style={activeItem === "Nos videos" ? activeStyle : {}}
         >
-          <Link to="/formations" style={{ textDecoration: "none" }}>
-            <span>Nos videos</span>
-            <FiChevronDown />
-          </Link>
-        </li>
-        {!userConnected && (
-          <li
-            className={activeItem === "Devenir membre" ? "active" : ""}
-            onClick={() => handleClick("Devenir membre")}
-            style={activeItem === "Devenir membre" ? activeStyle : {}}
+          <Popup
+            trigger={
+              <button
+                style={{
+                  background: "transparent",
+                  border: 0,
+                }}
+              >
+                <Link href="">
+                  <span>Média</span>
+                  <FiChevronDown />
+                </Link>
+              </button>
+            }
+            position={["bottom right", "bottom right", "bottom right"]}
+            closeOnDocumentClick
           >
-            <Link to="/sign-up" style={{ textDecoration: "none" }}>
-              Devenir membre
-            </Link>
-          </li>
-        )}
+            <div className="btnsLinks">
+              <Link
+                to="/videos"
+                style={{ padding: "1rem", textAlign: "center" }}
+              >
+                Vidoés
+              </Link>
+              <Link
+                to="/images"
+                style={{ padding: "1rem", textAlign: "center" }}
+              >
+                Images
+              </Link>
+            </div>
+          </Popup>
+        </li>
       </ul>
 
       <div className="profile-langue">
         <div className="select-langue">
+          <FcGlobe />
           <select>
             <option value="En">Anglais</option>
             <option value="Fr">Français</option>
@@ -139,7 +137,10 @@ const Navbar = ({ other }) => {
                 }}
               >
                 {userConnected ? (
-                  <span style={{ color: other ? "#222" : "#fff" }}>
+                  <span
+                    style={{ color: other ? "#222" : "#fff" }}
+                    className="nomUserProfile"
+                  >
                     {userConnected && userConnected.prenom}
                   </span>
                 ) : (

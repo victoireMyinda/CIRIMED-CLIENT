@@ -9,8 +9,13 @@ import Imagerie from "./imagerie/imagerie";
 import Equipe from "./equipe/equipe";
 import Specialite from "./specialite/specialite";
 import Service from "./services/service";
+import { useEffect } from "react";
 
 const Main = () => {
+  // useEffect(() => {
+  //   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  // }, []);
+
   return (
     <div className="mainContent">
       <div className="overPlay"></div>

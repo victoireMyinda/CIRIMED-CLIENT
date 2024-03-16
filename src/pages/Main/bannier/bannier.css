@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
+  margin-top: 80px;
 }
 
 .acceuil h2 {

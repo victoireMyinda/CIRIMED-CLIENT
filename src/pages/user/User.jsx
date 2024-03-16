@@ -1,54 +1,69 @@
-import React, { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Social from "../../components/social/social";
 import Navbar from "../../components/header/header";
 import "./User.css";
 import { ContextApp } from "../../../AppContext";
 import AddPost from "./addUser/AddPost";
-import { baseUrlFile } from "../../bases/basesurl";
+import { baseUrl, baseUrlFile } from "../../bases/basesurl";
 import { timestampParser } from "../../../Utils";
-import ReactPaginate from "react-paginate";
+import {
+  BsCheck2Circle,
+  BsFileEarmarkPlus,
+  BsFillInfoCircleFill,
+  BsHourglass,
+} from "react-icons/bs";
+import { Link } from "react-router-dom";
+import Popup from "reactjs-popup";
+import { FiMoreVertical } from "react-icons/fi";
+import { BiEditAlt, BiTrash } from "react-icons/bi";
+import swal from "sweetalert";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const User = () => {
-  const { userConnected, posts } = useContext(ContextApp);
+  const { userConnected, posts, setPosts } = useContext(ContextApp);
 
   const [post, setPost] = useState(null);
   const [show, setShow] = useState(false);
   const [index, setIndex] = useState(null);
 
-  const postsUser = posts && posts.data;
+  const userId = userConnected && userConnected.id;
 
-  const [itemOffset, setItemOffset] = useState(0);
+  const postsUser =
+    posts &&
+    posts.length > 0 &&
+    posts.filter((val) => {
+      const userID = val && val.userId;
+      if (parseInt(userId) === parseInt(userID)) {
+        return val;
+      }
+    });
 
-  const itemsPerPage = 8;
-
-  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-
-  function Items({ currentItems }) {
-    return (
-      <div className="itemsPag">
-        {currentItems &&
-          currentItems.map((item) => (
-            <div key={item}>
-              <h3>{}</h3>
-            </div>
-          ))}
-      </div>
-    );
-  }
-
-  const endOffset = itemOffset + itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  const currentItems = items.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(items.length / itemsPerPage);
-
-  // Invoke when user click to request another page.
-  const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % items.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
-    setItemOffset(newOffset);
+  const handleDeletePost = async (postID) => {
+    swal({
+      text: "Etes-vous sûr de vouloir supprimer ce post ?",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then(async (willDelete) => {
+        if (willDelete) {
+          await axios.delete(`${baseUrl}/posts/${postID}`);
+          const filterlivreurs =
+            posts &&
+            posts.length > 0 &&
+            posts.filter((val) => val.id !== postID);
+          setPosts(filterlivreurs);
+          toast.success("Post supprimé avec succès");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <>
@@ -63,19 +78,19 @@ const User = () => {
 
         <div className="dashboard">
           <div className="head">
-            <h5>{posts && posts.totalItems} posts</h5>
+            <h5>{postsUser && postsUser.length} posts</h5>
             <button onClick={() => setShow(true)}>Ajouter un post</button>
           </div>
 
           <div className="contentUser">
             {postsUser &&
               postsUser.length > 0 &&
-              postsUser.map((val) => {
+              postsUser.map((val, i) => {
                 const url = val && val.url;
                 const desc = val && val.desc;
                 const title = val && val.title;
                 return (
-                  <div className="card" key={val.id}>
+                  <div className="card" key={val && val.id}>
                     <div className="contentImage">
                       <div className="overPlay"></div>
                       <img src={baseUrlFile + "/" + url} alt={title} />
@@ -87,6 +102,35 @@ const User = () => {
                           title.substring(0, 100) + "..."
                         : title}
                     </h6>
+                    <div
+                      style={{
+                        background:
+                          val && val.status === false ? "#f3f5f8" : "green",
+                        width: "120px",
+                        textAlign: "center",
+                        borderRadius: "20px",
+                        border:
+                          val && val.status === false ? "1px solid #999" : "",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: "5px",
+                        marginBottom: "1rem",
+                      }}
+                    >
+                      <span
+                        style={{ fontSize: "14px", fontFamily: "Alegreya" }}
+                      >
+                        {val && val.status === false
+                          ? "En attente"
+                          : "Approuvé"}
+                      </span>
+                      {val && val.status === false ? (
+                        <BsHourglass size={10} />
+                      ) : (
+                        <BsCheck2Circle size={10} />
+                      )}
+                    </div>
                     <div className="desc">
                       {desc && desc.length > 100
                         ? desc &&
@@ -94,32 +138,54 @@ const User = () => {
                           desc.substring(0, 100) + "..."
                         : desc}
                     </div>
-                    <span className="date">
-                      {timestampParser(val && val.createdAt)}
-                    </span>
+
+                    <div className="contentBtnMore">
+                      <span className="date">
+                        {timestampParser(val && val.createdAt)}
+                      </span>
+
+                      <Popup
+                        trigger={
+                          <button className="btnMoreOptions">
+                            <FiMoreVertical />
+                          </button>
+                        }
+                        position={[
+                          "bottom center",
+                          "bottom right",
+                          "bottom left",
+                        ]}
+                        closeOnDocumentClick
+                      >
+                        <div className="btnsLinks">
+                          <Link
+                            to={{ pathname: "detail" }}
+                            state={{ data: val }}
+                          >
+                            <BsFillInfoCircleFill />
+                          </Link>
+                          <Link
+                            to={{ pathname: "" }}
+                            onClick={() => {
+                              setShow(true);
+                              setPost(val);
+                              setIndex(i);
+                            }}
+                          >
+                            <BiEditAlt />
+                          </Link>
+                          <BiTrash
+                            onClick={() => handleDeletePost(val && val.id)}
+                          />
+
+                          <BsFileEarmarkPlus />
+                        </div>
+                      </Popup>
+                    </div>
                   </div>
                 );
               })}
           </div>
-          <Items currentItems={currentItems} />
-          <ReactPaginate
-            breakLabel="..."
-            nextLabel="Suivant >"
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={5}
-            marginPagesDisplayed={2}
-            containerClassName="pagination justify-content-center"
-            pageClassName="page-item"
-            pageLinkClassName="page-link"
-            previousClassName="page-item"
-            previousLinkClassName="page-link"
-            nextClassName="page-item"
-            nextLinkClassName="page-link"
-            activeClassName="active"
-            pageCount={posts && posts.totalPages}
-            previousLabel="< Retour"
-            renderOnZeroPageCount={null}
-          />
         </div>
       </div>
 

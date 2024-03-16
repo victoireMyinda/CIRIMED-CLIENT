@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { decodeToken } from "react-jwt";
 import App from "./src/App";
 import { baseUrl } from "./src/bases/basesurl";
@@ -10,6 +10,7 @@ const AppContext = () => {
   const [userConnected, setUserConnected] = useState(null);
   const [isCoonnected, setIsConnected] = useState(false);
   const [posts, setPosts] = useState(null);
+  const [formations, setFormations] = useState([]);
 
   const value = localStorage.getItem("tokenUser");
   const jwt =
@@ -26,6 +27,15 @@ const AppContext = () => {
     }
   };
 
+  const getAllFormations = async () => {
+    try {
+      const { data } = await axios.get(`${baseUrl}/formations`);
+      setFormations(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const getAllPosts = async () => {
     try {
       const { data } = await axios.get(`${baseUrl}/posts`);
@@ -37,6 +47,7 @@ const AppContext = () => {
 
   useEffect(() => {
     getAllPosts();
+    getAllFormations();
   }, []);
 
   useEffect(() => {
@@ -55,6 +66,7 @@ const AppContext = () => {
         setIsConnected,
         setPosts,
         posts,
+        formations,
       }}
     >
       <App />
