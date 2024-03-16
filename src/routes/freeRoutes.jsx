@@ -5,6 +5,7 @@ import SignUp from "../pages/auth/SignUp";
 import { ToastContainer } from "react-toastify";
 import User from "../pages/user/User";
 import Posts from "../pages/posts/Posts";
+import DetailPost from "../pages/detailpost/detailpost";
 
 const RoutesFree = () => {
   return (
@@ -15,6 +16,7 @@ const RoutesFree = () => {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/user/:name" element={<User />} />
         <Route path="/posts" element={<Posts />} />
+        <Route path="/posts/detail" element={<DetailPost />} />
       </Routes>
       <ToastContainer />
     </BrowserRouter>

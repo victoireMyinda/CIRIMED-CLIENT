@@ -1,0 +1,68 @@
+.detailPostMain{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+.detailPostMain .detailPostBannier img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.detailPostMain .certifiedPost {
+    font-size: 15px;
+    margin: 1rem 6rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.detailPostMain .detailPostTitle{
+    margin-top: 1rem;
+    text-align: center;
+    font-size: xx-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.detailPostMain .detailPostAuteur {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.detailPostMain .detailPostAuteur .detailPhoto{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.detailPostMain .detailPostAuteur .detailPhoto img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.detailPostMain .detailPostAuteur .detailNomAuteur{
+    font-size: large;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.detailPostMain .detailPostAuteur .detailPub{
+
+ font-size: 15px;
+}
+
+.detailPostAuteur .detailDesc {
+    padding: 1rem 5rem;
+}
+.detailPostAuteur .detailDesc p {
+    text-align: justify !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
