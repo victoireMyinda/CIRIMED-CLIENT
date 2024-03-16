@@ -1,35 +1,48 @@
-.specialite {
-  background-color: #fff;
+.formationsContainer{
+  background-color: #f3f5f8;
   padding: 2rem 5rem;
+  margin-top: 95px;
+}
+.formationsGrille {
+  display: grid;
+  grid-template-columns: repeat(4, 23.7%);
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 1rem;
 }
 
-.specialite .title {
+
+.formationsContainer .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.formationsContainer .head span {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 2rem;
 }
 
-.specialite .card {
-  margin-bottom: 2rem;
+.formationsGrille .card {
+  margin-bottom: 1rem;
   border: 0;
 }
 
-.specialite .card .contentImage {
+.formationsGrille .card .contentImage {
   height: 200px;
   position: relative;
   border-radius: 8px;
   margin-bottom: 1rem;
-  width: 299px;
 }
 
-.specialite .card .contentImage img {
+.formationsGrille .card .contentImage img {
   width: 100%;
   height: 100%;
   border-radius: 8px;
   object-fit: cover;
 }
 
-.specialite .card .overPlay {
+.formationsGrille .card .overPlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -38,7 +51,7 @@
   border-radius: 8px;
 }
 
-.specialite .prix {
+.formationsGrille .prix {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -51,19 +64,19 @@
   font-weight: 700;
 }
 
-.specialite .card .desc {
+.formationsGrille .card .desc {
   font-family: "Alegreya";
 }
 
-.specialite .date {
+.formationsGrille .date {
   font-family: "Alegreya";
 }
 
-.specialite .itemsPag {
+.formationsGrille .itemsPag {
   display: flex;
 }
 
-.specialite .buttonShowMore {
+.formationsGrille .buttonShowMore {
   text-align: center;
   background-color: transparent;
   border: 1px solid silver;
@@ -75,7 +88,7 @@
   border-radius: 3px;
 }
 
-.specialite .contentBtnMore {
+.formationsGrille .contentBtnMore {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -83,7 +96,7 @@
   margin-top: 1rem;
 }
 
-.specialite .btnInscrire {
+.formationsGrille .btnInscrire {
   width: 230px;
   border-radius: 20px;
   background-color: #f3f5f8;
@@ -91,7 +104,7 @@
   padding: 0.3rem;
 }
 
-.specialite .containerBtnInscrire {
+.formationsGrille .containerBtnInscrire {
   margin-top: 1rem;
   display: flex;
   align-items: center;
@@ -99,9 +112,8 @@
   width: 299px;
 }
 
-.specialite  .div {
-  width: 299px;
-  padding: .4rem;
+.formationsGrille .div {
+  padding: 0.4rem;
   display: flex;
   align-items: center;
   background-color: #f3f5f8;

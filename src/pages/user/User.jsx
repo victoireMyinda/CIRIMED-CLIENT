@@ -120,7 +120,11 @@ const User = () => {
                       }}
                     >
                       <span
-                        style={{ fontSize: "14px", fontFamily: "Alegreya" }}
+                        style={{
+                          fontSize: "14px",
+                          fontFamily: "Alegreya",
+                          color: val && val.status === false ? "" : "#fff",
+                        }}
                       >
                         {val && val.status === false
                           ? "En attente"
@@ -129,7 +133,7 @@ const User = () => {
                       {val && val.status === false ? (
                         <BsHourglass size={10} />
                       ) : (
-                        <BsCheck2Circle size={10} />
+                        <BsCheck2Circle size={10} color="#fff" />
                       )}
                     </div>
                     <div className="desc">

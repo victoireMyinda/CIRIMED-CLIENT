@@ -2,13 +2,13 @@ import "./specialite.css";
 import Carousel from "react-multi-carousel";
 import { useContext } from "react";
 import { ContextApp } from "../../../../AppContext";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { baseUrlFile } from "../../../bases/basesurl";
 import { timestampParser } from "../../../../Utils";
 import { FiPlus } from "react-icons/fi";
 
 const Specialite = () => {
-  const { formations } = useContext(ContextApp);
+  const { formations, userConnected } = useContext(ContextApp);
 
   const responsive = {
     desktop: {
@@ -26,6 +26,19 @@ const Specialite = () => {
       items: 2,
       slidesToSlide: 1, // optional, default to 1.
     },
+  };
+
+  const navigate = useNavigate();
+
+  const redirectHandle = (data) => {
+    const name = data && data.title;
+    const id = data && data.id;
+    if (userConnected) navigate(`/sign-up/${name}_${id}`);
+    else navigate(`/sign-in`);
+  };
+
+  const redirectHandleToFormations = () => {
+    navigate(`/formations`);
   };
 
   return (
@@ -58,6 +71,8 @@ const Specialite = () => {
                 const url = val && val.url;
                 const desc = val && val.desc;
                 const title = val && val.title;
+                console.log(val);
+                const candidats = val && val.users;
                 return (
                   <div className="card" key={val && val.id}>
                     <div className="contentImage">
@@ -89,13 +104,27 @@ const Specialite = () => {
                         Fin: {timestampParser(val && val.dateFin)}
                       </span>
                     </div>
+
+                    <div className="containerBtnInscrire">
+                      <button
+                        className="btnInscrire"
+                        onClick={() => redirectHandle(val)}
+                      >
+                        M'inscrire à cette formation
+                      </button>
+                    </div>
+                    {candidats && candidats.length > 0 && (
+                      <div className="div">
+                        {candidats && candidats.length} inscrits déjà
+                      </div>
+                    )}
                   </div>
                 );
               })}
           </Carousel>
         </div>
 
-        <button className="buttonShowMore">
+        <button className="buttonShowMore" onClick={redirectHandleToFormations}>
           <span>Voir plus</span>
           <FiPlus />
         </button>
