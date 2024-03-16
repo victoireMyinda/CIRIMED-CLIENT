@@ -19,6 +19,7 @@ import { BiEditAlt, BiTrash } from "react-icons/bi";
 import swal from "sweetalert";
 import axios from "axios";
 import { toast } from "react-toastify";
+import parse from "html-react-parser";
 
 const User = () => {
   const { userConnected, posts, setPosts } = useContext(ContextApp);
@@ -135,8 +136,8 @@ const User = () => {
                       {desc && desc.length > 100
                         ? desc &&
                           desc.length > 100 &&
-                          desc.substring(0, 100) + "..."
-                        : desc}
+                          parse(desc.substring(0, 100) + "...")
+                        : parse(desc)}
                     </div>
 
                     <div className="contentBtnMore">

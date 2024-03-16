@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Modal } from "react-bootstrap";
 import { FiX } from "react-icons/fi";
 import axios from "axios";
@@ -6,9 +6,11 @@ import { toast } from "react-toastify";
 import { ContextApp } from "../../../../AppContext";
 import { baseUrl, baseUrlFile } from "../../../bases/basesurl";
 import "./AddUser.css";
+import JoditEditor from "jodit-react";
 
 const AddUser = ({ setShow, show, post, setPost, index }) => {
-  const { userConnected, setPosts, posts } = useContext(ContextApp);
+  const { userConnected, setPosts, posts, getAllPosts } =
+    useContext(ContextApp);
 
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -36,19 +38,14 @@ const AddUser = ({ setShow, show, post, setPost, index }) => {
       formData.append("userId", userConnected && userConnected.id);
 
       if (post) {
-        let { data } = await axios.put(
-          `${baseUrl}/posts/${post && post.id}`,
-          formData
-        );
-        const arr = [...posts];
-        arr[index + 1] = data;
-        setPosts([...arr]);
+        await axios.put(`${baseUrl}/posts/${post && post.id}`, formData);
+        getAllPosts();
         setClic(false);
         setShow(false);
         setTitle("");
         setDesc("");
         setFile("");
-        setPost(null)
+        setPost(null);
         toast.success("Post modifié");
       } else {
         let { data } = await axios.post(`${baseUrl}/posts`, formData);
@@ -72,6 +69,10 @@ const AddUser = ({ setShow, show, post, setPost, index }) => {
       setClic(false);
     }
   };
+
+  const editor = useRef(null);
+
+  console.log(desc);
 
   return (
     <Modal show={show} className="addUser">
@@ -130,14 +131,17 @@ const AddUser = ({ setShow, show, post, setPost, index }) => {
 
           <div>
             <label>Description</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Description"
+
+            <JoditEditor
+              ref={editor}
+              tabIndex={1}
               value={desc}
-              onChange={(e) => setDesc(e.target.value)}
+              onBlur={(newContent) => setDesc(newContent)} // preferred to use only this option to update the content for performance reasons
+              onChange={(e) => {}}
             />
           </div>
+
+          <br />
 
           <div>
             <label>Choisir une photo</label>
@@ -151,6 +155,7 @@ const AddUser = ({ setShow, show, post, setPost, index }) => {
 
           <div className="button">
             <button
+              className="save"
               style={{
                 opacity: title && desc ? (clic ? 0.5 : 1) : 0.5,
               }}

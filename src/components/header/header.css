@@ -89,3 +89,9 @@
 .navbarMain.active .select-langue select {
   color: #222;
 }
+
+.nomUserProfile {
+  background: #106e9f;
+  padding: 0.3rem;
+  border-radius: 2px;
+}

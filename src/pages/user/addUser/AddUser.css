@@ -17,7 +17,7 @@
   margin-bottom: 10px;
 }
 
-.addUser.modal .modal-dialog button {
+.addUser.modal .modal-dialog .save {
   background-color: #199de4;
   border: 0;
   padding: 0.4rem 1rem;

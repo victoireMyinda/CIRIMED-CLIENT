@@ -138,7 +138,6 @@ const Navbar = ({ other }) => {
               >
                 {userConnected ? (
                   <span
-                    style={{ color: other ? "#222" : "#fff" }}
                     className="nomUserProfile"
                   >
                     {userConnected && userConnected.prenom}
