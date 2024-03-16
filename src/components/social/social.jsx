@@ -12,12 +12,12 @@ const Social = ({ other }) => {
   return (
     <div className={other ? "socialMain active" : "socialMain"}>
       <div className="streetAdress">
-        <span>Location: 121 Wallstreet, NY, USA</span>
+        <span>Location: 121 Wallstreet, NY, Kinshasa</span>
         <span>Email: contact@cimired.com</span>
       </div>
 
       <div className="rxSocial">
-        <span>For urgence: +243 827788272</span>
+        <span>For urgence: +243 821337095</span>
 
         <div className="iconsRx">
           <FiLinkedin />

@@ -8,6 +8,9 @@ import Posts from "../pages/posts/Posts";
 import PrivatesRoutes from "./RoutesPrivates";
 import SignUpFormation from "../pages/signupToFormation/SignUpFormation";
 import Formations from "../pages/formations/Formations"
+import DetailPost from "../pages/detailpost/detailpost";
+import DetailFormation from "../pages/detailformation/detailformation";
+
 
 const RoutesFree = () => {
   return (
@@ -24,7 +27,10 @@ const RoutesFree = () => {
 
         <Route path="/posts" element={<Posts />} />
         <Route path="/formations" element={<Formations />} />
+        <Route path="/posts/detail" element={<DetailPost />} />
+        <Route path="/formations/detail" element={<DetailFormation />} />
       </Routes>
+     
       <ToastContainer />
     </BrowserRouter>
   );

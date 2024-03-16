@@ -9,6 +9,7 @@ import Imagerie from "./imagerie/imagerie";
 import Equipe from "./equipe/equipe";
 import Specialite from "./specialite/specialite";
 import Service from "./services/service";
+import Footer from "../../components/footer/footer";
 import { useEffect } from "react";
 
 const Main = () => {
@@ -29,6 +30,7 @@ const Main = () => {
       <Specialite />
       <Service />
       <Equipe />
+      <Footer />
     </div>
   );
 };

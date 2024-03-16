@@ -3,6 +3,7 @@ import { ContextApp } from "../../../AppContext";
 import { timestampParser } from "../../../Utils";
 import Navbar from "../../components/header/header";
 import Social from "../../components/social/social";
+import Footer from "../../components/footer/footer";
 import "./Formations.css";
 import { useNavigate } from "react-router-dom";
 import { baseUrlFile } from "../../bases/basesurl";
@@ -91,6 +92,7 @@ const Formations = () => {
             })}
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Social from "../../components/social/social";
 import Navbar from "../../components/header/header";
 import "./User.css";
+import Footer from "../../components/footer/footer";
 import { ContextApp } from "../../../AppContext";
 import AddPost from "./addUser/AddPost";
 import { baseUrl, baseUrlFile } from "../../bases/basesurl";
@@ -201,6 +202,7 @@ const User = () => {
         setShow={setShow}
         show={show}
       />
+       <Footer />
     </>
   );
 };

@@ -57,6 +57,18 @@ const Navbar = ({ other }) => {
       </div>
 
       <ul>
+
+      <li
+          className={activeItem === "Accueil" ? "active" : ""}
+          onClick={() => handleClick("Accueil")}
+          style={activeItem === "Accueil" ? activeStyle : {}}
+        >
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <span>Accueil</span>
+            <FiChevronDown />
+          </Link>
+        </li>
+
         <li
           className={activeItem === "Posts" ? "active" : ""}
           onClick={() => handleClick("Posts")}

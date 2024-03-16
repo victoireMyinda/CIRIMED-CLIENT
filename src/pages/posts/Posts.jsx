@@ -8,6 +8,7 @@ import Navbar from "../../components/header/header";
 import { useNavigate } from "react-router-dom";
 import { BsClock } from "react-icons/bs";
 import parse from "html-react-parser";
+import Footer from "../../components/footer/footer";
 
 const Posts = () => {
   const { posts } = useContext(ContextApp);
@@ -74,7 +75,9 @@ const Posts = () => {
               : "0 posts"}
           </div>
         </div>
+       
       </div>
+      <Footer/>
     </>
   );
 };

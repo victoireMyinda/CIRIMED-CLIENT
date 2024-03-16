@@ -36,6 +36,7 @@
 }
 .socialMain .rxSocial .iconsRx svg {
   color: #fff;
+  cursor: pointer;
 }
 
 .socialMain .rxSocial span,
