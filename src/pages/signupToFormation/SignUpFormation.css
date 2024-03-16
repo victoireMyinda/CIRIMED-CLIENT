@@ -1,0 +1,42 @@
+.signupFormation {
+  padding: 2rem 5rem;
+  background-color: #f3f5f8;
+  margin-top: 95px;
+}
+
+.signupFormation .retour {
+  margin-bottom: 2rem;
+  border-radius: 2px;
+  padding: 0.3rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background-color: #000;
+  gap: 0.5rem;
+}
+
+.signupFormation .retour span,
+.signupFormation .retour svg {
+  color: #fff;
+}
+
+.signupFormation .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signupFormation button:last-child {
+  background-color: #0b3257fb;
+  margin-bottom: 2rem;
+  border-radius: 2px;
+  padding: 0.3rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  gap: 0.5rem;
+  color: #fff;
+}

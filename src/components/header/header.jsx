@@ -93,7 +93,7 @@ const Navbar = ({ other }) => {
                 }}
               >
                 <Link href="">
-                  <span>Média</span>
+                  <span>Médiathèques</span>
                   <FiChevronDown />
                 </Link>
               </button>
@@ -137,11 +137,16 @@ const Navbar = ({ other }) => {
                 }}
               >
                 {userConnected ? (
-                  <span
-                    className="nomUserProfile"
-                  >
-                    {userConnected && userConnected.prenom}
-                  </span>
+                  <div style={{
+                    background:"#f3f5f8",
+                    border:"1px solid silver",
+                    padding:".3rem",
+                    borderRadius:"3px"
+                  }}>
+                    <span>
+                      {userConnected && userConnected.prenom}
+                    </span>
+                  </div>
                 ) : (
                   <FaRegUser
                     size={20}

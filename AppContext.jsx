@@ -69,7 +69,8 @@ const AppContext = () => {
         setPosts,
         posts,
         formations,
-        getAllPosts
+        getAllPosts,
+        getAllFormations
       }}
     >
       <App />
