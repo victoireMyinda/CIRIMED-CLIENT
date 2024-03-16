@@ -1,0 +1,16 @@
+.detailPostMain{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+.detailPostMain .detailPostBannier img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+

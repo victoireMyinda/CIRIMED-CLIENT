@@ -6,6 +6,8 @@ import { ToastContainer } from "react-toastify";
 import User from "../pages/user/User";
 import Posts from "../pages/posts/Posts";
 import DetailPost from "../pages/detailpost/detailpost";
+import DetailFormation from "../pages/detailformation/detailformation";
+
 
 const RoutesFree = () => {
   return (
@@ -17,7 +19,9 @@ const RoutesFree = () => {
         <Route path="/user/:name" element={<User />} />
         <Route path="/posts" element={<Posts />} />
         <Route path="/posts/detail" element={<DetailPost />} />
+        <Route path="/formations/detail" element={<DetailFormation />} />
       </Routes>
+     
       <ToastContainer />
     </BrowserRouter>
   );
