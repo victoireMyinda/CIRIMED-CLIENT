@@ -9,15 +9,40 @@
     font-weight: bold;
 }
 
-.equipePhoto {
+.membreDetail{
     display: flex;
-    gap: 2rem;   
+    justify-content: center;
+   
+    gap: 5rem;    
 }
 
-.equipePhoto div {
-    height: 500px;
-    width: 40%;
-    background-color: lightblue;
-    border-radius: 10px;
+.equipePhoto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;    
+}
+
+.equipePhoto .photoContent {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: lightblue;  
+}
+
+.equipePhoto .photoContent img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
     object-fit: cover;
+}
+
+.equipePhoto  .equipeNom{
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.equipePhoto .equipeTitle{
+    font-size: 15px;
 }
