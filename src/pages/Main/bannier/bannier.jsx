@@ -14,7 +14,7 @@ const Bannier = () => {
       </div>
       <div className="btns">
         <button className="button">Découvrir</button>
-        <button className="button"> <Link to="/sign-in" style={{textDecoration:"none", color:"white"}}>Devenir Membre</Link></button>
+        <button className="button"> <Link to="/sign-up" style={{textDecoration:"none", color:"white"}}>Devenir Membre</Link></button>
 
       </div>
     </div>
