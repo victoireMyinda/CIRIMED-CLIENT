@@ -18,6 +18,8 @@ const AppContext = () => {
   const decodedToken = decodeToken(jwt);
   const userID = decodedToken && decodedToken.id;
 
+  console.log(value)
+
   const getUserById = async (id) => {
     try {
       const { data } = await axios.get(`${baseUrl}/users/${id}`);
