@@ -1,7 +1,7 @@
 .blocImagerie {
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  height: 30rem;
+  gap: 3rem;
   padding: 2rem 5rem;
   background-color: #f3f5f8;
 }
@@ -13,13 +13,17 @@
 }
 
 .blocImagerie .textBackground {
-  background-color: lightblue;
+  
   display: grid;
   gap: 1rem;
-  padding: 4rem 7rem;
+ 
 }
 
 .blocImagerie .textBackground .bigTitle {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 700;
+}
+
+.blocImagerie .textBackground .missionItems ul li {
+margin: 1rem;
 }

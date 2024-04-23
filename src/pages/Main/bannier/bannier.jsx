@@ -4,17 +4,13 @@ import "./bannier.css";
 const Bannier = () => {
   return (
     <div className="acceuil">
-      <h2>Notre expertise pour votre santé</h2>
+      <h2>CENTRE INTERDISCIPLINAIRE EN IMAGERIE MEDICALE</h2>
       <div className="description">
-        Le médecin est la personne qui examine ton corps, qui te soigne quand tu
-        es malade et te donne des conseils pour rester en bonne santé. Si cela
-        est nécessaire, il te prescrit des médicaments, des examens
-        complémentaires (prise de sang, radio…) ou un traitement (séances de
-        kinésithérapie…).
+      Notre vision est de créer un pôle d’excellence regroupant les groupes de créativité et les infrastructures permettant de mener un programme de recherche ambitieux avec un impact social et une évolution vers le bien-être durable.
       </div>
       <div className="btns">
-        <button className="button">Découvrir</button>
-        <button className="button"> <Link to="/sign-up" style={{textDecoration:"none", color:"white"}}>Devenir Membre</Link></button>
+        <button className="button">Nous decouvrir</button>
+        <button className="button"> <Link to="/sign-up" style={{ textDecoration: "none", color: "white" }}>Inscription</Link></button>
 
       </div>
     </div>

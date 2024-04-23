@@ -1,0 +1,64 @@
+.formMain {
+    background-color: #f3f5f8;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    height: max-content;
+    padding: 2rem 3rem;
+}
+
+.formMain .signupForm form input {
+    outline: none !important;
+    padding: 0.6rem;
+    
+}
+
+.formMain .imageForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.formMain .imageForm .imageLocation {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-image: url("../../../assets//images/doctor.png");
+    background-size: cover;
+    object-fit: cover;
+}
+
+.formMain .imageForm .notreAdresse p{
+    text-align: center;
+    color: black;
+
+}
+
+.formMain .imageForm .notreAdresse p a {
+    text-decoration: none;
+    color: black;
+}
+
+.formMain .imageForm .notreSocial{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    
+}
+
+.contactTitle {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+ .buttonContact {
+    width: 30%;
+    border: none;
+    background-color: #199de4;
+    color: #fff;
+    border-radius: 10px;
+    padding: 0.6rem !important;
+  }
+  

@@ -1,0 +1,31 @@
+.blocValeur {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 3rem;
+    padding: 2rem 5rem;
+    background-color: #f3f5f8;
+    height: 570px;
+  }
+  
+  .blocValeur .valeurBackground {
+    background-image: url("../../../assets//images/cm.jpeg");
+    background-size: cover;
+    object-fit: cover;
+    
+  }
+  
+  .blocValeur .textValeur {
+    display: grid;
+    
+    
+   
+  }
+  
+  .blocValeur .textValeur .bigTitle {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .blocValeur .textValeur .ValeurItems ul li {
+  margin: 1rem;
+  }

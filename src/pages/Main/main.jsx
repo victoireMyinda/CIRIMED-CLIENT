@@ -3,14 +3,15 @@ import Social from "../../components/social/social";
 import Navbar from "../../components/header/header";
 import "./Main.css";
 import Bannier from "./bannier/bannier";
-import Services from "./services/Services";
 import About from "./about/about";
-import Imagerie from "./imagerie/imagerie";
+import Mission from "./mission/mission";
 import Equipe from "./equipe/equipe";
-import Specialite from "./specialite/specialite";
-import Service from "./services/service";
+import Formations from "./quelquesformations/quelquesformatins";
+import NosValuers from "./valeur/valeur";
+import Partenaire from "./partenaire/partenaire";
+import Contact from "./contact/contact";
 import Footer from "../../components/footer/footer";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const Main = () => {
   // useEffect(() => {
@@ -24,12 +25,13 @@ const Main = () => {
       <Navbar />
 
       <Bannier />
-      <Services />
       <About />
-      <Imagerie />
-      <Specialite />
-      <Service />
+      <Mission />
+      <Formations />
+      <NosValuers />
       <Equipe />
+      <Contact />
+      <Partenaire />
       <Footer />
     </div>
   );

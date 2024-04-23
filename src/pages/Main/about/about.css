@@ -5,7 +5,6 @@
   gap: 1rem;
   background-color: #fff;
   padding: 2rem 5rem;
-  margin-top: 1rem;
 }
 
 .About .col1 {
@@ -31,9 +30,10 @@
 }
 
 .About .col2 .title {
-  font-size: 1.4rem;
-  font-weight: bold;
-  font-weight: 300;
+  font-size: 2rem;
+  font-weight: 700;
+ 
+  
 }
 
 .About .col2 .desc {
@@ -50,11 +50,15 @@
   justify-content: space-between;
 }
 
+.About .col2 .desc3 .blocItem1 p{
+  text-align: justify;
+}
+
 .About .col2 .button {
   width: 30%;
   border: none;
   background-color: #199de4;
   color: #fff;
   border-radius: 10px;
-  padding: 1rem !important;
+  padding: 0.6rem !important;
 }

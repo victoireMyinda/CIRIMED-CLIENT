@@ -1,19 +1,22 @@
 .equipeMain {
-    display: grid;
+   
     padding: 2rem 5rem ;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+   
 }
 
-.equipeSecondText {
+.equipeFirstText{
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .membreDetail{
     display: flex;
     justify-content: center;
+    gap: 2rem;    
    
-    gap: 5rem;    
 }
 
 .equipePhoto {
@@ -21,7 +24,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;    
+    gap: 0.3rem;    
 }
 
 .equipePhoto .photoContent {
@@ -34,7 +37,7 @@
 .equipePhoto .photoContent img{
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 100%;
     object-fit: cover;
 }
 
@@ -45,4 +48,9 @@
 
 .equipePhoto .equipeTitle{
     font-size: 15px;
+}
+
+.equipePhoto .equipeTitle a {
+    text-decoration: none !important;
+    color: black !important;
 }

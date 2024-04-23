@@ -1,4 +1,3 @@
-import React from "react";
 import "./Services.css";
 import { FaHospital, FaHospitalAlt, FaUserMd } from "react-icons/fa";
 
@@ -6,7 +5,9 @@ const Services = () => {
   return (
     <div className="Services">
       <div className="servicesContent">
+       
         <div className="content">
+        
           <FaUserMd />
           <h5>Cabinet médical privé</h5>
           <div className="desc">

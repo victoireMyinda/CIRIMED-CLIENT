@@ -1,15 +1,21 @@
 .Services {
-  width: 70%;
+  width: 100%;
   margin: auto;
-  border-bottom: 5px solid #0b6cc7d0;
+ border: 1px solid red;
+ padding: 2rem 5rem;
 }
 
 .Services .servicesContent {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+ 
 }
+
+ /* h4 {
+  text-align: center;
+  z-index: 1;
+} */
 
 .Services .servicesContent .content {
   display: flex;
@@ -18,7 +24,6 @@
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  z-index: 1;
   padding: 2rem;
 }
 

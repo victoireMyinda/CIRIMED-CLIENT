@@ -1,4 +1,4 @@
-import "./specialite.css";
+import "./quelquesformations.css";
 import Carousel from "react-multi-carousel";
 import { useContext } from "react";
 import { ContextApp } from "../../../../AppContext";
@@ -7,7 +7,7 @@ import { baseUrlFile } from "../../../bases/basesurl";
 import { timestampParser } from "../../../../Utils";
 import { FiPlus } from "react-icons/fi";
 
-const Specialite = () => {
+const QuelquesFormations = () => {
   const { formations, userConnected } = useContext(ContextApp);
 
   const responsive = {
@@ -133,4 +133,4 @@ const Specialite = () => {
   );
 };
 
-export default Specialite;
+export default QuelquesFormations;
